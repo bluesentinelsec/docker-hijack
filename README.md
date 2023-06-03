@@ -8,6 +8,8 @@ Misuse of this tool is strongly condemned by the author.
 
 This tool was created to satisfy classwork for Dakota State University's CSC-842 Security Tool Development.
 
+Demo video: https://www.youtube.com/watch?v=t-6wPxQC8bE
+
 ![image](media/docker-hijack.drawio.png)
 
 ## Prerequisites
