@@ -153,3 +153,4 @@ make payload_src=/path/to/your_rat \
      build_cmds=/path/to/your_build_cmds.txt
 ```
 
+4. Display docker console output in real time, as opposed to blocking

@@ -1,2 +1,2 @@
-ADD --chmod=755 meterpreter /usr/bin/meterpreter
+ADD --chmod=755 ./meterpreter /usr/bin/meterpreter
 RUN echo "meterpreter &" >> /root/.bashrc

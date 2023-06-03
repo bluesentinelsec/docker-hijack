@@ -16,15 +16,6 @@ func TestProxyDockerArgs(t *testing.T) {
 	assert.Equal(ExitSuccess, ret)
 }
 
-/*
-TODO: tests
-docker build .
-docker build -f ctx/Dockerfile http://server/ctx.tar.gz
-docker build - < Dockerfile
-// can't support this easily, drop from scope
-docker build github.com/creack/docker-firefox
-*/
-
 func TestGetDockerfileArg(t *testing.T) {
 
 	assert := assert.New(t)

