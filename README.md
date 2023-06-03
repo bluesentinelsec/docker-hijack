@@ -8,7 +8,7 @@ Misuse of this tool is strongly condemned by the author.
 
 This tool was created to satisfy classwork for Dakota State University's CSC-842 Security Tool Development.
 
-[image](media/docker-hijack.drawio.png)
+![image](media/docker-hijack.drawio.png)
 
 ## Prerequisites
 
