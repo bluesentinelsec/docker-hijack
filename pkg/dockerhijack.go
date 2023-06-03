@@ -47,8 +47,9 @@ func DoHijack(osArgs []string) {
 
 	RestoreBuildFile(osArgs, originalFileBytes)
 
+	// cleanup artifacts
 	os.Remove(PAYLOAD_NAME)
-
+	
 }
 
 func RestoreBuildFile(osArgs []string, data []byte) error {

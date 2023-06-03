@@ -105,7 +105,7 @@ To test this, run a docker build command against `docker-hijack/testData/Dockerf
 # build the Dockerfile; docker-hijack will intercept the command
 # and inject the Dockerfile; once the build is finished, docker-hijack
 # will restore the original build file
-docker build . -t compromised
+docker build . -t infected
 ```
 
 Finally, execute the container.
@@ -113,7 +113,7 @@ Finally, execute the container.
 If it worked, you should get a shell.
 
 ```bash
-docker exec -it compromised bash
+docker run -it infected bash
 ```
 
 ```bash
@@ -153,4 +153,4 @@ make payload_src=/path/to/your_rat \
      build_cmds=/path/to/your_build_cmds.txt
 ```
 
-4. Display docker console output in real time, as opposed to blocking
+4. Proxy commands and output using a real TTY
